@@ -1,12 +1,14 @@
-# Alzheimer’s Disease Classification Using a Hybrid Deep Learning Model
+# Hybrid Deep Learning Architecture with Adaptive Feature Fusion for Multi-Stage Alzheimer’s Disease Classification
 
-This project aims to train a hybrid deep learning model combining ResNet50 and Vision Transformer (ViT) with adaptive feature fusion to classify Alzheimer’s disease stages using T1-weighted MRI scans from the Alzheimer’s 5-Class (AD5C) dataset. The model achieves **99.42%** accuracy, surpassing the prior benchmark of **98.24%**. The code demonstrates preprocessing, training, and evaluation, with the model architecture withheld until paper publication.
+This project develops a hybrid deep learning model combining ResNet50 and Vision Transformer (ViT) with an adaptive feature fusion layer to classify Alzheimer’s disease stages using T1-weighted MRI scans from the Alzheimer’s 5-Class (AD5C) dataset. The model achieves **99.42%** accuracy, surpassing the prior benchmark of **98.24%**. The architecture is withheld until paper publication.
 
 ## Usage
 
 **The `src/main.py` file contains all the steps involved in the project.** The script is divided into different sections that correspond to the various steps of the project.
 
 ## Data Source
+
+The Alzheimer’s dataset used in this project can be downloaded from [Kaggle here](https://www.kaggle.com/datasets/your-dataset-link). You will need to create an account on Kaggle to access the dataset.
 
 The dataset is the Alzheimer 5-class dataset (AD5C), sourced from:
 
@@ -39,7 +41,7 @@ The dataset is the Alzheimer 5-class dataset (AD5C), sourced from:
 ## Results
 
 <h3 id="abstract">Abstract</h3>
-<p>This study introduces a hybrid deep learning framework for multi-stage Alzheimer’s disease (AD) classification using T1-weighted MRI scans from the Alzheimer’s 5-Class (AD5C) dataset. Combining ResNet50 and Vision Transformer (ViT) with adaptive feature fusion, the model achieves **99.42%** accuracy, surpassing the prior benchmark of **98.24%**. The code demonstrates preprocessing, training, and evaluation, with the model architecture withheld until paper publication.</p>
+<p>This study presents a hybrid deep learning model integrating ResNet50 and Vision Transformer (ViT) with an adaptive feature fusion layer for multi-stage Alzheimer’s disease (AD) classification using T1-weighted MRI scans from the AD5C dataset (2,380 scans). The model achieves **99.42%** accuracy (precision: **99.55%**, recall: **99.46%**, F1-score: **99.50%**), outperforming the prior benchmark of **98.24%**. Adaptive fusion enhances local and global feature integration, with ablation studies confirming its role in reducing misclassifications. Validation on a four-class dataset demonstrates robust generalizability, aiding early AD diagnosis.</p>
 
 <h3 id="figures">Figures</h3>
 <p align="center">
@@ -240,7 +242,7 @@ matplotlib>=3.3.0
 <ul>
     <li>**High Performance:** The hybrid model surpasses the prior benchmark (**98.24%**) by integrating local and global features via adaptive fusion.</li>
     <li>**Preprocessing Benefits:** Sharpening, CLAHE, and augmentations (rotation, flipping, color jitter) enhance feature extraction, reducing errors.</li>
-    <li>**Generalizability:** Validation on a four-class dataset confirms robustness across AD tasks.</li>
+    <li>**Generalizability:** Validation on a four-class dataset confirms robust generalizability across AD tasks.</li>
     <li>**Ablation Insights:** Adaptive feature fusion is critical for minimizing misclassifications, especially for Mild Demented cases.</li>
     <li>**Limitations:** The placeholder model is less effective, and class imbalance (e.g., fewer VeryMildDemented samples) may affect performance.</li>
 </ul>
