@@ -6,7 +6,7 @@
 <h3>Model Architecture</h3>
 <p>The framework combines a ResNet50-based CNN, a Vision Transformer (ViT), and an adaptive feature fusion layer to integrate local and global brain features for AD classification. As the paper is under review, the implementation (<code>HybridModel</code>, <code>AttentionFusion</code>) is withheld to protect intellectual property. A placeholder model is provided in <code>src/main.py</code>.</p>
 <p align="center">
-  <img src="figures/model_architecture.png?raw=true" alt="Model Architecture" width="100%">
+  <img src="figures/overall (2).png?raw=true" alt="Model Architecture" width="100%">
 </p>
 <p align="center"><i>Caption: Placeholder schematic of the hybrid model. Full details will be released upon publication.</i></p>
 
@@ -30,7 +30,7 @@ The dataset is the Alzheimer 5-class dataset (AD5C), sourced from:
     <li><b>Access:</b> Download from the source and place in <code>data/</code>, or update <code>train_dir</code> and <code>test_dir</code> in <code>src/main.py</code> to your dataset path.</li>
 </ul>
 <p align="center">
-  <img src="figures/datasetsample_image.png?raw=true" alt="Dataset Sample Image" width="100%">
+  <img src="figures/figure1.png?raw=true" alt="Dataset Sample Image" width="100%">
 </p>
 <p align="center"><i>Caption: Sample MRI scan from the AD5C dataset.</i></p>
 
@@ -107,12 +107,12 @@ matplotlib>=3.3.0
 
 <h3>Results</h3>
 <p align="center">
-  <img src="figures/confusion_matrix.png?raw=true" alt="Confusion Matrix" width="70%">
+  <img src="figures/hybrid_confusion.png?raw=true" alt="Confusion Matrix" width="70%">
 </p>
 <p align="center"><i>Caption: Test dataset confusion matrix.</i></p>
 
 <p align="center">
-  <img src="figures/training_plot.png?raw=true" alt="Training Plot" width="100%">
+  <img src="figures/hybrid_plot.png?raw=true" alt="Training Plot" width="100%">
 </p>
 <p align="center"><i>Caption: Training and validation accuracy/loss curves.</i></p>
 
