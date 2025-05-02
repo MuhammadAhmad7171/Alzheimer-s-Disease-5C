@@ -209,7 +209,7 @@ matplotlib>=3.3.0
 
 ## Contact
 
-<p>For questions or collaboration inquiries, contact <b>Your Name</b> at <a href="mailto:[Your Email]">[Your Email]</a>.</p>
+<p>For questions or collaboration inquiries, contact <b>Your Name</b> at <a href="mailto:[ahmadjameel7171@gmail.com]">[ahmadjameel7171@gmail.com]</a>.</p>
 
 ## Acknowledgments
 
@@ -227,4 +227,4 @@ matplotlib>=3.3.0
     <li>Detailed architecture diagram (<code>figures/model_architecture.png</code>).</li>
     <li>Trained weights (if permitted by the dataset license).</li>
 </ul>
-<p>For reviewer access to the full code or weights, contact <a href="mailto:[Your Email]">[Your Email]</a>. Updates will be announced post-publication.</p>
+<p>For reviewer access to the full code or weights, contact <a href="mailto:[ahmadjameel7171@gmail.com]">[ahmadjameel7171@gmail.com]</a>. Updates will be announced post-publication.</p>
