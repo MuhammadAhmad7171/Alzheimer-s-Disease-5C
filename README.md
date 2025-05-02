@@ -1,26 +1,27 @@
-Alzheimer’s Disease Classification Using a Hybrid Deep Learning Model
-Abstract
-Background: Alzheimer’s disease (AD), a progressive neurodegenerative disorder, demands precise early diagnosis to enable timely interventions. Accurately staging AD is difficult due to the complex combination of local brain changes and widespread connectivity problems.Methods: Traditional CNN and deep learning models struggle to integrate local brain changes with global connectivity patterns, limiting their effectiveness in AD classification. This study proposes a novel deep learning framework with adaptive feature fusion for multi-stage AD classification using T1-weighted MRI scans. The framework integrates a ResNet50-based convolutional neural network (CNN) for extracting fine-grained local features, a Vision Transformer (ViT) for modeling long-range brain connectivity, and an adaptive feature fusion layer for dynamically synthesizing these multi-scale features into a unified representation.Results: Evaluated on the Alzheimer’s 5-Class (AD5C) dataset comprising 2,380 MRI scans, the framework achieves an accuracy of 99.42% (precision: 99.55%, recall: 99.46%, F1-score: 99.50%), surpassing the prior benchmark of 98.24%. Ablation studies underscore the pivotal role of adaptive feature fusion in minimizing misclassifications, while external validation on a four-class dataset confirms robust generalizability.Conclusion: This framework offers transformative potential for clinical AD diagnostics, enhancing early detection and intervention strategies.
-Figures
+Alzheimer’s Disease Classification 🧠
 
-Model Architecture: figures/model_architecture.png (Placeholder schematic of the hybrid model, withheld until publication).
-Confusion Matrix: figures/confusion_matrix.png (Test dataset confusion matrix).
-Training Plot: figures/training_plot.png (Training and validation accuracy/loss curves).
-Results: figures/results.png (Visualization of classification metrics).
+This repository contains the code for a deep learning pipeline to classify Alzheimer’s disease stages using MRI scans. The model achieves 99.42% accuracy on the Alzheimer’s 5-Class (AD5C) dataset. The architecture is withheld until paper publication, with a placeholder provided for reproducibility.
+📝 Abstract
+We propose a hybrid deep learning model for multi-stage Alzheimer’s disease classification using T1-weighted MRI scans from the AD5C dataset. Combining ResNet50 and Vision Transformer (ViT) with adaptive feature fusion, it achieves 99.42% accuracy, surpassing the 98.24% benchmark. This repository includes preprocessing, training, and evaluation code, with the full model to be released post-publication.
+📊 Figures
 
-Dataset
-The dataset used is the Alzheimer 5-class dataset (AD5C), sourced from:
+figures/model_architecture.png: Placeholder model schematic (full details post-publication).
+figures/confusion_matrix.png: Test set confusion matrix.
+figures/training_plot.png: Training/validation accuracy and loss curves.
+figures/results.png: Classification metrics visualization.
 
-[Insert Paper Citation, e.g., Author(s). (Year). "Title of the Paper." Journal/Conference Name.]
+🗄️ Dataset
+Source: Alzheimer 5-class dataset (AD5C)Citation:  
+
+[Insert Citation, e.g., Author(s). (Year). "Title of the Paper." Journal/Conference Name.]
 
 
-Classes: Mild Demented, Moderate Demented, Non-Demented, Severe Demented, Very Mild Demented.
-Size: 2,380 T1-weighted MRI scans.
-Structure: Organized into train/ and test/ directories, with subfolders for each class.
-Access: Download from the Kaggle link and place in data/, or update train_dir and test_dir in src/main.py to your local dataset path.
+Classes: Mild Demented, Moderate Demented, Non-Demented, Severe Demented, Very Mild Demented
+Size: 2,380 MRI scans
+Setup: Download from Kaggle, place in data/, or update paths in src/main.py.
 
-Requirements
-Install dependencies using Python 3.8+ and the provided requirements.txt:
+🛠️ Requirements
+Install dependencies using Python 3.8+:
 pip install -r requirements.txt
 
 requirements.txt:
@@ -31,80 +32,66 @@ opencv-python>=4.5.0
 scikit-learn>=0.24.0
 matplotlib>=3.3.0
 
-Manual installation:
+Or manually:
 pip install torch torchvision numpy opencv-python scikit-learn matplotlib
 
-Repository Structure
+📂 Repository Structure
+alzheimer-classification/
+├── src/
+│   └── main.py               # Preprocessing, training, evaluation
+├── figures/
+│   ├── model_architecture.png
+│   ├── confusion_matrix.png
+│   ├── training_plot.png
+│   └── results.png
+├── data/                     # Dataset placeholder
+├── requirements.txt          # Dependencies
+├── LICENSE                   # MIT License
+└── README.md                 # This file
 
-src/main.py: Main script for preprocessing, training, and evaluation.
-figures/:
-model_architecture.png: Placeholder model architecture diagram.
-confusion_matrix.png: Confusion matrix for test predictions.
-training_plot.png: Training/validation accuracy and loss curves.
-results.png: Classification metrics visualization.
+🧠 Model Architecture
+The model integrates ResNet50, ViT, and an adaptive feature fusion layer for superior AD classification. To protect intellectual property, the implementation (HybridModel, AttentionFusion) is withheld until publication. A placeholder model is provided in src/main.py.
+Placeholder schematic. Full architecture will be shared post-publication.
+🚀 Testing Guidelines
 
+Setup Environment:
 
-data/: Placeholder for the dataset (not included; see Dataset section).
-requirements.txt: Python dependencies.
-LICENSE: MIT License (to be updated post-publication).
-README.md: This file.
-
-Model Architecture
-The proposed framework integrates a ResNet50-based CNN for local feature extraction, a Vision Transformer (ViT) for long-range connectivity modeling, and a novel adaptive feature fusion layer to combine multi-scale features. Due to the paper being under review, the detailed implementation (HybridModel and AttentionFusion) is withheld to protect intellectual property. A placeholder model is provided in src/main.py for pipeline demonstration.
-Figure: Model ArchitectureCaption: Placeholder schematic of the hybrid model. Full details will be released upon publication.
-Testing Guidelines
-To test the pipeline with the placeholder model:
-
-Prepare the Environment:
-
-Ensure Python 3.8+ and dependencies are installed (see Requirements).
-Verify GPU availability for faster training (CUDA-supported GPU recommended).
+Install dependencies (see Requirements).
+Use a CUDA-supported GPU for faster training, or set device = "cpu" in src/main.py.
 
 
-Download and Set Up the Dataset:
+Prepare Dataset:
 
-Download the AD5C dataset from Kaggle.
-Place the train/ and test/ folders in data/, or modify train_dir and test_dir in src/main.py to point to your dataset location.
+Download AD5C dataset from Kaggle.
+Place train/ and test/ in data/, or update paths in src/main.py.
 
 
-Run the Pipeline:
+Run Pipeline:
 python src/main.py
 
-This executes:
 
-Preprocessing: Applies sharpening, CLAHE, and resizing to MRI scans, saving processed images in /kaggle/working/processed_images/.
-Training: Trains the placeholder model with early stopping and learning rate scheduling (50 epochs, batch size 64).
-Evaluation: Computes test accuracy, classification report, and generates figures (confusion matrix, training plots).
-
-
-Expected Outputs:
-
-Model Weights: Saved as best_model.pth (not included in the repository).
-Figures: Saved in figures/:
-Confusion matrix (confusion_matrix.png).
-Training/validation curves (training_plot.png).
-Results visualization (results.png, if implemented).
+Preprocessing: Sharpening, CLAHE, resizing.
+Training: 50 epochs, batch size 64, early stopping.
+Evaluation: Generates accuracy, classification report, and figures.
 
 
-Console Output: Test accuracy, classification report, and epoch-wise training metrics.
+Outputs:
+
+Weights: best_model.pth (not shared).
+Figures: Saved in figures/ (confusion matrix, training plots, results).
+Console: Test metrics and training logs.
 
 
 Troubleshooting:
 
-Ensure sufficient disk space for processed images (/kaggle/working/).
-If CUDA errors occur, set device = torch.device("cpu") in src/main.py.
-Verify dataset paths and image formats (JPG, PNG, JPEG).
+Ensure disk space for /kaggle/working/processed_images/.
+Verify image formats (JPG, PNG, JPEG).
+Check dataset paths in src/main.py.
 
 
 
-Results
-Evaluated on the AD5C test set (173 samples), the full hybrid model achieves:
-
-Accuracy: 99.42%
-Precision: 99.55%
-Recall: 99.46%
-F1-Score: 99.50%
-
+📈 Results
+The full model achieves 99.42% accuracy on the AD5C test set (173 samples):
 Classification Report:
                   precision    recall  f1-score   support
     MildDemented       1.00      0.98      0.99        49
@@ -116,33 +103,38 @@ VeryMildDemented       1.00      1.00      1.00        13
        macro avg       0.99      1.00      0.99       173
     weighted avg       0.99      0.99      0.99       173
 
-Note: The placeholder model in src/main.py yields lower performance. The above metrics reflect the full hybrid model, as reported in the paper.
-Figure: Confusion MatrixCaption: Confusion matrix for test set predictions, showing near-perfect classification.
-Figure: Training and Validation CurvesCaption: Training and validation accuracy/loss curves, demonstrating stable convergence.
-Figure: Results SummaryCaption: Visualization of precision, recall, and F1-score across classes.
-Findings
 
-Superior Performance: The hybrid model outperforms the prior benchmark (98.24%) by leveraging adaptive feature fusion to integrate local and global brain features.
-Preprocessing Impact: Sharpening, CLAHE, and data augmentation (random rotation, flipping, color jitter) enhance feature extraction, reducing misclassifications.
-Generalizability: External validation on a four-class dataset confirms the model’s robustness across different AD classification tasks.
-Ablation Insights: Adaptive feature fusion is critical for minimizing errors, particularly for challenging classes like Mild Demented.
-Limitations: The placeholder model lacks the hybrid architecture’s sophistication, resulting in lower performance. Class imbalance (e.g., fewer VeryMildDemented samples) may still pose challenges.
+Precision: 99.55%
+Recall: 99.46%
+F1-Score: 99.50%
 
-Note
-The model architecture (HybridModel, AttentionFusion) and trained weights are withheld until the paper is published to protect novel contributions. The provided src/main.py includes a placeholder model to demonstrate the pipeline. Post-publication, the repository will be updated with:
+Note: The placeholder model yields lower performance. Above metrics reflect the full hybrid model.
+Test set confusion matrix.
+Training/validation accuracy and loss curves.
+Precision, recall, and F1-score visualization.
+🔍 Findings
 
-Full model implementation.
-Detailed architecture diagram (figures/model_architecture.png).
-Trained weights (if permitted by the dataset license).
+Performance: Outperforms 98.24% benchmark via adaptive feature fusion.
+Preprocessing: Sharpening, CLAHE, and augmentations reduce misclassifications.
+Generalizability: Validated on a four-class dataset, showing robustness.
+Ablation: Feature fusion is key for distinguishing Mild Demented cases.
+Limitations: Placeholder model is less effective; class imbalance may impact results.
 
-For reviewer access to the full code or weights, contact [Your Email]. Updates will be announced post-publication.
-License
-This project is licensed under the MIT License (see LICENSE). The full code release post-publication will also be under this license.
-Contact
-For questions or collaboration inquiries, contact [Your Name] at [Your Email].
-Acknowledgments
+⚠️ Note
+The model architecture and weights are withheld until paper publication. src/main.py includes a placeholder model. Post-publication, we’ll release:
 
-The AD5C dataset providers and the referenced paper authors.
-The open-source community for tools like PyTorch, OpenCV, and scikit-learn.
-Kaggle for hosting the dataset.
+Full HybridModel and AttentionFusion code.
+Updated figures/model_architecture.png.
+Weights (if dataset license allows).
+
+Contact [Your Email] for reviewer access to full code/weights.
+📜 License
+MIT License (full code will be MIT post-publication).
+📬 Contact
+[Your Name] - [Your Email]
+🙏 Acknowledgments
+
+AD5C dataset providers and paper authors.
+PyTorch, OpenCV, and scikit-learn communities.
+Kaggle for dataset hosting.
 
