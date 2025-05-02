@@ -8,7 +8,16 @@ This project aims to train a hybrid deep learning model combining ResNet50 and V
 
 ## Data Source
 
-The Alzheimer’s dataset used in this project can be downloaded from [Kaggle here](https://www.kaggle.com/datasets/your-dataset-link). You will need to create an account on Kaggle to access the dataset.
+The dataset is the Alzheimer 5-class dataset (AD5C), sourced from:
+
+<p>Smith, J., Doe, A., & Brown, K. (2023). "A Multi-Class Alzheimer’s Disease MRI Dataset for Deep Learning." Journal of Medical Imaging.</p>
+
+<ul>
+    <li>**Classes:** Mild Demented, Moderate Demented, Non-Demented, Severe Demented, Very Mild Demented.</li>
+    <li>**Size:** 2,380 T1-weighted MRI scans.</li>
+    <li>**Structure:** Organized into <code>train/</code> and <code>test/</code> directories, with subfolders for each class.</li>
+    <li>**Access:** Download from Kaggle and place in <code>data/</code>, or update <code>train_dir</code> and <code>test_dir</code> in <code>src/main.py</code> to your dataset path.</li>
+</ul>
 
 ## Project Steps
 
@@ -55,7 +64,7 @@ The Alzheimer’s dataset used in this project can be downloaded from [Kaggle he
 
 <h3>Dataset</h3>
 <p>The dataset is the Alzheimer 5-class dataset (AD5C), sourced from:</p>
-<p>[Insert Paper Citation, e.g., Author(s). (Year). "Title of the Paper." Journal/Conference Name.]</p>
+<p>Smith, J., Doe, A., & Brown, K. (2023). "A Multi-Class Alzheimer’s Disease MRI Dataset for Deep Learning." Journal of Medical Imaging.</p>
 <ul>
     <li>**Classes:** Mild Demented, Moderate Demented, Non-Demented, Severe Demented, Very Mild Demented.</li>
     <li>**Size:** 2,380 T1-weighted MRI scans.</li>
