@@ -209,7 +209,7 @@ matplotlib>=3.3.0
 
 ## Contact
 
-<p>For questions or collaboration inquiries, contact <b>Your Name</b> at <a href="mailto:[ahmadjameel7171@gmail.com]">[ahmadjameel7171@gmail.com]</a>.</p>
+<p>For questions or collaboration inquiries, contact <b>Ahmad Muhammad</b> at <a href="mailto:[ahmadjameel7171@gmail.com]">[ahmadjameel7171@gmail.com]</a>.</p>
 
 ## Acknowledgments
 
